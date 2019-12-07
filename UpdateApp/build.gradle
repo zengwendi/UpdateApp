@@ -2,7 +2,9 @@ apply plugin: 'com.android.library'
 
 //apply plugin: 'com.novoda.bintray-release'//添加
 
-apply plugin: 'com.github.zengwendi.UpdateApp'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.zengwendi'
 
 android {
     compileSdkVersion 26
