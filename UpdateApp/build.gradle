@@ -28,7 +28,23 @@ android {
         abortOnError false
     }
 }
+// 打包源码jar
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
 
+
+allprojects {
+    tasks.withType(Javadoc) {
+        options.encoding = "UTF-8"
+    }
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = "UTF-8"
+}
 
 
 dependencies {
