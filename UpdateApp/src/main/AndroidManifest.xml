@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.renrenfenqi.update">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.renrenfenqi.update">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -14,9 +15,11 @@
             android:name=".utils.AppFileProvider"
             android:authorities="${applicationId}.myprovider"
             android:exported="false"
+            tools:replace="android:authorities"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
+                tools:replace="android:resource"
                 android:resource="@xml/app_file_paths"/>
         </provider>
     </application>
